@@ -1,0 +1,7 @@
+"""
+    Assignment
+    1. Create new tables for stock and sales
+    2. Create forms for stock and sales
+    3. Send data to the new stock and new sales from the forms
+    
+    """
