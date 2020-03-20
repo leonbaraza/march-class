@@ -1,0 +1,36 @@
+from flask import Flask, render_template, request, redirect, url_for, flash
+
+import pygal
+
+import psycopg2
+
+from flask_sqlalchemy import SQLAlchemy
+
+
+from Config.Config import Development
+
+
+
+app = Flask(__name__)
+app.config.from_object(Development)
+db = SQLAlchemy(app)
+
+@app.route('/inventories', methods=['GET','POST'])
+def inventories():
+
+    if request.method == 'POST':
+        name = request.form['name']
+        type = request.form['type']
+        bp = request.form['bp']
+        sp = request.form['sp']
+
+        print(name)
+        print(type)
+        print(sp)
+        print(bp)
+
+    return render_template('inventories.html')
+
+
+if __name__ == '__main__':
+    app.run()
